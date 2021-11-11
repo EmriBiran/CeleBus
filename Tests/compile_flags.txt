@@ -1,0 +1,3 @@
+-IC:\Users\Emri.Biran\Documents\Tests\Tests
+-target
+i686-pc-windows-gnu
