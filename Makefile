@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ CeleBus - Debug ]----------"
-	@cd "Tests" && "$(MAKE)" -f  "CeleBus.mk"
+	@echo "----------Building project:[ LeetCode - Debug ]----------"
+	@cd "C:\Users\Emri.Biran\Documents\LeetCode\LeetCode" && "$(MAKE)" -f  "LeetCode.mk"
 clean:
-	@echo "----------Cleaning project:[ CeleBus - Debug ]----------"
-	@cd "Tests" && "$(MAKE)" -f  "CeleBus.mk" clean
+	@echo "----------Cleaning project:[ LeetCode - Debug ]----------"
+	@cd "C:\Users\Emri.Biran\Documents\LeetCode\LeetCode" && "$(MAKE)" -f  "LeetCode.mk" clean
