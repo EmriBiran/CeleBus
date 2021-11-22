@@ -93,7 +93,10 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="Enums.hpp"/>
+    <VirtualDirectory Name="Include">
+      <File Name="src/Include/Defines.hpp"/>
+      <File Name="Enums.hpp"/>
+    </VirtualDirectory>
     <File Name="Vehicle.hpp"/>
     <File Name="Vehicle.cpp"/>
     <File Name="Event.cpp"/>

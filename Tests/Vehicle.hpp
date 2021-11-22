@@ -1,30 +1,31 @@
 #pragma once
-#include "Enums.hpp"
+#include <Enums.hpp>
+#include <iostream>
 
 class Vehicle
 {
 private:
     Enums_T::VehicleType mVehicleType;
-    Enums_T::Color mVehicleColor;
+    Color mVehicleColor;
     int mNumOfSeats;
 
 public:
 
     // Constructors
     Vehicle();
-    Vehicle(Enums_T::VehicleType vehicleType, Enums_T::Color color, int numOfSeats);
+    Vehicle(VehicleType vehicleType, Color color, int numOfSeats);
     
     // Distractors
-    virtual ~Vehicle();
+    virtual ~Vehicle()  = default;
     
     // Getters
     int GetNumOfSeats() const;
-    const Enums_T::Color& GetVehicleColor() const;
-    const Enums_T::VehicleType& GetVehicleType() const;
+    const Color& GetVehicleColor() const;
+    const VehicleType& GetVehicleType() const;
     
     // Setters
-    Vehicle& SetNumOfSeats(int numOfSeats);
-    Vehicle& SetVehicleColor(const Enums_T::Color& vehicleColor);
-    Vehicle& SetVehicleType(const Enums_T::VehicleType& vehicleType);
+    SysError SetNumOfSeats(int numOfSeats);
+    SysError SetVehicleColor(const Color& vehicleColor);
+    SysError SetVehicleType(const VehicleType& vehicleType);
     
 };

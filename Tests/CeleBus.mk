@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=emri.biran
-Date                   :=14/11/2021
+Date                   :=22/11/2021
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :="C:/Program Files/mingw-w64/mingw64/bin/g++.exe"
 SharedObjectLinkerName :="C:/Program Files/mingw-w64/mingw64/bin/g++.exe" -shared -fPIC
@@ -62,7 +62,7 @@ AS       := "C:/Program Files/mingw-w64/mingw64/bin/as.exe"
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/Vehicle.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Event.cpp$(ObjectSuffix) $(IntermediateDirectory)/AppMember.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/AppMember.cpp$(ObjectSuffix) $(IntermediateDirectory)/Vehicle.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Event.cpp$(ObjectSuffix) 
 
 
 
@@ -93,6 +93,12 @@ PreBuild:
 ##
 ## Objects
 ##
+$(IntermediateDirectory)/AppMember.cpp$(ObjectSuffix): AppMember.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/AppMember.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/AppMember.cpp$(DependSuffix) -MM AppMember.cpp
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Emri.Biran/Documents/Tests/Tests/AppMember.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/AppMember.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/AppMember.cpp$(PreprocessSuffix): AppMember.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/AppMember.cpp$(PreprocessSuffix) AppMember.cpp
+
 $(IntermediateDirectory)/Vehicle.cpp$(ObjectSuffix): Vehicle.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Vehicle.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Vehicle.cpp$(DependSuffix) -MM Vehicle.cpp
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Emri.Biran/Documents/Tests/Tests/Vehicle.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Vehicle.cpp$(ObjectSuffix) $(IncludePath)
@@ -110,12 +116,6 @@ $(IntermediateDirectory)/Event.cpp$(ObjectSuffix): Event.cpp
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Emri.Biran/Documents/Tests/Tests/Event.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Event.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Event.cpp$(PreprocessSuffix): Event.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Event.cpp$(PreprocessSuffix) Event.cpp
-
-$(IntermediateDirectory)/AppMember.cpp$(ObjectSuffix): AppMember.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/AppMember.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/AppMember.cpp$(DependSuffix) -MM AppMember.cpp
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Emri.Biran/Documents/Tests/Tests/AppMember.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/AppMember.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/AppMember.cpp$(PreprocessSuffix): AppMember.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/AppMember.cpp$(PreprocessSuffix) AppMember.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
